@@ -50,21 +50,46 @@ using namespace std;
 // }
 
 //v3: array of size 26
+// int main()
+// {
+//     string s = "anagram";
+//     string t = "nagrram";
+//     int x1[26] = {0}, x2[26] = {0};
+//     for(int i = 0; i < s.length(); i++)
+//     {
+//         x1[s[i] - 'a']++;
+//         x2[t[i] - 'a']++;
+//     }
+//     int n = sizeof(x1)/sizeof(x1[0]);
+//     bool flag = true;
+//     for(int i = 0; i < n; i++)
+//     {
+//         if(x1[i] != x2[i])
+//         {
+//             flag = false;
+//             break;
+//         }
+//     }
+//     cout << flag;
+// }
+
+
+//v4: array of size 26, summation
 int main()
 {
     string s = "anagram";
-    string t = "nagrram";
-    int x1[26] = {0}, x2[26] = {0};
+    string t = "nagaram";
+    int sum[26] = {0};
     for(int i = 0; i < s.length(); i++)
     {
-        x1[s[i] - 'a']++;
-        x2[t[i] - 'a']++;
+        sum[s[i] - 'a']++;
+        sum[t[i] - 'a']--;
     }
-    int n = sizeof(x1)/sizeof(x1[0]);
+    int n = sizeof(sum)/sizeof(sum[0]);
     bool flag = true;
     for(int i = 0; i < n; i++)
     {
-        if(x1[i] != x2[i])
+        if(sum[i] != 0)
         {
             flag = false;
             break;
