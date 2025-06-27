@@ -16,7 +16,6 @@ struct TreeNode{
 void levelOrder(TreeNode* node){
     queue<TreeNode*> q;
     q.push(node);
-    
     while(!q.empty())
     {
         node = q.front();
