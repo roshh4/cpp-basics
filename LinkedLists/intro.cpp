@@ -30,8 +30,20 @@ void Traverse(Node* head){
     }
 }
 
+int sizeOfList(Node* head) {
+    Node* temp = head;
+    int x = 0;
+    while(temp != nullptr) {
+        x++;
+        temp = temp->next;
+    }
+    return x;
+}
+
 int main() {
     vector <int> v = {1,2,3,4,5,6,7};
     Node * head = CreateList(v);
     Traverse(head);
+    int s = sizeOfList(head);
+    cout << endl << "size is: " << s;
 }
