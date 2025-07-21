@@ -74,3 +74,23 @@ int main()
     head = insertValue(head, y, x);
     traverse(head);
 }
+
+
+class Solution {
+public:
+    Node* reverseList(Node* head) {
+        if (!head || !head->next) {
+            return head;
+        }
+
+        Node* newHead = reverseList(head->next);
+        Node* front = head->next;
+
+        front->next = head;
+        head->next = NULL;
+
+        return newHead;
+    }
+};
+
+
